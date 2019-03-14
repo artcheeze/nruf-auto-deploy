@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 var cors = require('cors');
+var shell = require('shelljs');
 port = 6000;
 
 const app = express()
@@ -12,7 +13,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.post('/hooking', (req, res) => {
-   console.log(req)
+    shell.exec('cd .. && cd nruf-backend')
    res.sendStatus(200)
 })
 
