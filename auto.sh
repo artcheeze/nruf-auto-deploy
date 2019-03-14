@@ -1,1 +1,0 @@
-screen -d -m node run.js
