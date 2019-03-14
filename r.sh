@@ -1,1 +1,1 @@
-cd .. && cd nruf-backend && screen -d -m node facade.js
+echo "Hi There!"
