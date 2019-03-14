@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.post('/hooking', (req, res) => {
-    shell.exec('cd .. && cd nruf-backend')
+    shell.exec('cd .. && cd nruf-backend && screen -d -m node facade.js')
    res.sendStatus(200)
 })
 
