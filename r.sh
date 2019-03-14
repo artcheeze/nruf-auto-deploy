@@ -1,0 +1,1 @@
+cd .. && cd nruf-backend && screen -d -m node facade.js

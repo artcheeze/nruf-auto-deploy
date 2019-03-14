@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const exec = require('child_process').exec;
-const shell = exec('ls');
 var cors = require('cors');
 port = 6000;
 
@@ -14,17 +13,18 @@ app.use(bodyParser.urlencoded({
 }));
 
 
+
+
 app.post('/hooking', (req, res) => {
-    testscript.stdout.on('data', function(data){
-        console.log(data);
-        // sendBackInfo();
-    });
+    var sh = exec('sh r.sh',
+        (error, stdout, stderr) => {
+            console.log(stdout);
+            console.log(stderr);
+            if (error !== null) {
+                console.log(`exec error: ${error}`);
+            }
+        });
     
-    testscript.stderr.on('data', function(data){
-        console.log(data);
-        // triggerErrorStuff();
-    });
-    console.log("aa")
    res.sendStatus(200)
 })
 
