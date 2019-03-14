@@ -15,9 +15,16 @@ app.use(bodyParser.urlencoded({
 
 
 app.post('/hooking', (req, res) => {
-    shell.stdout.on('data', function(data){
+    testscript.stdout.on('data', function(data){
         console.log(data);
+        // sendBackInfo();
     });
+    
+    testscript.stderr.on('data', function(data){
+        console.log(data);
+        // triggerErrorStuff();
+    });
+    console.log("aa")
    res.sendStatus(200)
 })
 
