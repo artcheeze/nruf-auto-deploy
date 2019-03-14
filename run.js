@@ -1,7 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const exec = require('child_process').exec;
+const shell = exec('ls');
 var cors = require('cors');
-var shell = require('shelljs');
 port = 6000;
 
 const app = express()
@@ -12,8 +13,11 @@ app.use(bodyParser.urlencoded({
     limit: '50mb'
 }));
 
+
 app.post('/hooking', (req, res) => {
-    shell.exec('cd .. && cd nruf-backend && screen -d -m node facade.js')
+    shell.stdout.on('data', function(data){
+        console.log(data);
+    });
    res.sendStatus(200)
 })
 
