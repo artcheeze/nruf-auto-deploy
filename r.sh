@@ -1,1 +1,1 @@
-killall screen && cd /home/artcheeze/nruf-backend && npm install && screen -d -m node facade.js && echo "Success Deploy" 
+process.exit() && cd /home/artcheeze/nruf-backend && npm install && screen -d -m node facade.js && echo "Success Deploy" 
