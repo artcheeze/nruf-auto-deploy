@@ -1,1 +1,1 @@
-killall screen && cd /home/artcheeze/nruf-backend && git pull && npm install && screen -d -m node facade.js && echo "Success Deploy" 
+killall screen && cd /home/artcheeze/nruf-backend && art@bangmod59 | git pull && npm install && screen -d -m node facade.js && echo "Success Deploy" 
