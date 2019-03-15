@@ -30,4 +30,4 @@ app.post('/hooking', (req, res) => {
 
 
 
-app.listen(port, () => console.log(` on port ${port}!`))
+app.listen(port, () => console.log(`Auto deploy is started on ${port}!`))
