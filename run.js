@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({
 
 
 app.post('/hooking', (req, res) => {
-    var sh = exec('sh r.sh',
+    var sh = exec('sh ./r.sh',
         (error, stdout, stderr) => {
             console.log(stdout);
             console.log(stderr);
